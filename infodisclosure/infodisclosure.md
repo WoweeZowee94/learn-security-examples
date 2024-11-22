@@ -31,5 +31,10 @@ This will create a database in MongoDB called __infodisclosure__. Verify its pre
 Answer the following:
 
 1. Briefly explain the potential vulnerabilities in **insecure.ts**
+- This server is directly using a user input to execute a database query, which allows for malicious inputs that could return potentially sensitive user information.
 2. Briefly explain how a malicious attacker can exploit them.
+- If they user inputs a database command/query that can potentially return sensitive user information, they can
+infiltrate the system using this information.
 3. Briefly explain the defensive techniques used in **secure.ts** to prevent the information disclosure vulnerability?
+- It implements the sanitization of user inputs, preventing malicious inputs from making their way into the database as well
+as preventing sensitive information to be returned to users making malicious requests. 

@@ -30,5 +30,12 @@ This example demonstrates spoofind through two ways -- Stealing cookies programm
 ## For you to answer
 
 1. Briefly explain the spoofing vulnerability in **insecure.ts**.
+- The cookie validating the user is not secure, so it is vulnerable to being stolen or intercepted through a spoofing
+    attack, such as what is done in mal-steal-cookie.html/mal.ts 
 2. Briefly explain different ways in which vulnerability can be exploited.
+- If a malicious attacker can direct a logged in user to a spoofed webpage, such as mal-steal-cookie.html,
+they can trick them into sending a request that contains their validation cookie, which can they be stolen and used 
+to infiltrate the system. 
 3. Briefly explain why **secure.ts** does not have the spoofing vulnerability in **insecure.ts**.
+- Secure.ts has the 'httpOnly' property of the cookie set to 'true' which disallows malicious users from
+interacting with the cookie programatically, securing it from spoofing attacks.

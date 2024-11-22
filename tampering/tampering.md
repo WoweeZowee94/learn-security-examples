@@ -25,5 +25,11 @@ This example demonstrates tampering through script injection.
 Answer the following:
 
 1. Briefly explain the potential vulnerabilities in **insecure.ts**
+- There is a lack of input validation when the session is taking the user input from req.body
+    which allows for potentially malicious inputs.
 2. Briefly explain how a malicious attacker can exploit them.
+- For example, a malicious attacker could input a script that creates a url that prompts
+    unsuspecting users to input potentially sensitive information.
 3. Briefly explain why **secure.ts** does not have the same vulnerabilties?
+- secure.ts escapes any HTML input into the input and sanitizes it, preventing malicious
+    users from injecting things like scripts into the document from the form input.

@@ -1,2 +1,10 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
+The initial implementation is at risk of anonymous and untrackable user actions. Because there is no authentication or logging
+of requests made to the server, anyone can access potentially sensitive information through pinging the endpoints and will not
+be traceable when they do.
+The secure version is better because it implements a logging middleware that tracks and logs all requests made to the server,
+and it implies the implementation of authentication for sensitive endpoints such as the 'get-messages' endpoint.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+An authentication middleware that prevents potentially malicious users from accessing the primary components of the application,
+preventing them from doing things like adding potentially malicious messages and pinging the messages endpoint without being
+an authenticated user.
